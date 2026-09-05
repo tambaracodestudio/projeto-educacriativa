@@ -8,6 +8,23 @@
   <title>Educa Criativa ✦ 2.000 Atividades Prontas para Professores</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1061822406392723');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1061822406392723&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -41,6 +58,10 @@
         <p class="hero-subtitle">
           Economize tempo no planejamento com um acervo completo de materiais pedagógicos para baixar, imprimir e usar com sua turma.
         </p>
+        <div class="hero-price" style="margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+          <span style="text-decoration: line-through; color: #ff4d4d; font-size: 1.8rem; font-weight: 700;">De R$ 99,90</span>
+          <span style="color: var(--pink-hot); font-size: 2.2rem; font-weight: 800;">Por R$ 29,90</span>
+        </div>
         <a href="https://pay.cakto.com.br/3dnizu7_1061393" target="_blank" class="btn-cta">QUERO MEU E-BOOK POR R$ 29,90</a>
         <div class="hero-checks">
           <span>Pagamento único</span>
@@ -383,5 +404,23 @@
     });
   </script>
 
+  <script>
+    // ===== PIXEL TRACKING - INITIATE CHECKOUT =====
+    // Dispara o evento quando qualquer botão de compra for clicado
+    document.addEventListener('DOMContentLoaded', function() {
+      const buyButtons = document.querySelectorAll('a[href*="pay.cakto.com.br"]');
+      
+      buyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          if (typeof fbq === 'function') {
+            fbq('track', 'InitiateCheckout', {
+              value: 29.90,
+              currency: 'BRL'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
